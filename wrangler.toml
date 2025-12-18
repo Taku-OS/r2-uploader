@@ -7,3 +7,10 @@ main = "src/index.ts"
 r2_buckets = [
     {binding = "R2_BUCKET", bucket_name = "taku"}
 ]
+
+[observability]
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
