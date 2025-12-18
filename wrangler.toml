@@ -1,8 +1,8 @@
-name = "r2-uploader-example-worker"
+name = 'r2-uploader'
 compatibility_date = "2023-12-01"
 
 # modify `bucket_name`
 # don't modify the `binding`
 r2_buckets = [
-    {binding = "R2_BUCKET", bucket_name = "test"}
+    {binding = "R2_BUCKET", bucket_name = "taku"}
 ]
