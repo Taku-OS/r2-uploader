@@ -1,5 +1,6 @@
 name = 'r2-uploader'
 compatibility_date = "2023-12-01"
+main = "src/index.ts"
 
 # modify `bucket_name`
 # don't modify the `binding`
