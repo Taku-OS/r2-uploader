@@ -1,4 +1,5 @@
 import {Context} from "hono"
+import {isPrivateMediaKey} from '../privateMedia'
 
 export default async function (c: Context) {
   const cursor = c.req.query('cursor')
@@ -6,5 +7,11 @@ export default async function (c: Context) {
     cursor: cursor || undefined
   })
 
-  return c.json(list)
+  return c.json({
+    ...list,
+    objects: list.objects.filter((object: R2Object) => !isPrivateMediaKey(object.key)),
+    delimitedPrefixes: (list.delimitedPrefixes ?? []).filter(
+      (prefix: string) => !isPrivateMediaKey(prefix),
+    ),
+  })
 }

@@ -1,6 +1,8 @@
 {
   "name": "r2-uploader-example-worker",
   "scripts": {
+    "build": "bun build ./src/index.ts --target=browser --format=esm --minify --outfile=dist/worker.js",
+    "test": "bun run build && bun test tests",
     "dev": "wrangler dev src/index.ts --port 4897",
     "deploy": "wrangler deploy --minify src/index.ts"
   },
